@@ -161,6 +161,13 @@ header ul a {
     font-size: 20px;
 }
 
+.hero-info button a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
 .hero-info button {
     color: white;
     padding: 15px 35px;
@@ -380,6 +387,11 @@ header ul a {
 .card:nth-child(3) {
     grid-row: span 2;
     height: 83vh;
+}
+
+.card:nth-child(3)  a{
+    text-decoration: none;
+    color: white;
 }
 
 .card:nth-child(3) p {
