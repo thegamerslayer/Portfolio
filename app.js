@@ -46,11 +46,11 @@ close.addEventListener("click", function () {
 // "Lets talk" part
 
 
-  const form = document.querySelector(
+const form = document.querySelector(
     'form[action="https://formspree.io/f/xkogyyjk"]'
-  );
+);
 
-  form.addEventListener("submit", async (e) => {
+form.addEventListener("submit", async (e) => {
     e.preventDefault(); // stop normal submit
 
     // get inputs by order / placeholder
@@ -58,30 +58,30 @@ close.addEventListener("click", function () {
     const messageInput = form.querySelector(".input-message");
 
     const data = {
-      name: inputs[0].value,
-      email: inputs[1].value,
-      message: messageInput.value
+        name: inputs[0].value,
+        email: inputs[1].value,
+        message: messageInput.value
     };
 
     try {
-      const response = await fetch("https://formspree.io/f/xkogyyjk", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
+        const response = await fetch("https://formspree.io/f/xkogyyjk", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
 
-      if (response.ok) {
-        alert("Message sent successfully ✅");
-        form.reset();
-      } else {
-        alert("Failed to send message ❌");
-      }
+        if (response.ok) {
+            alert("Message sent successfully ✅");
+            form.reset();
+        } else {
+            alert("Failed to send message ❌");
+        }
 
     } catch (error) {
-      alert("Something went wrong ❌");
+        alert("Something went wrong ❌");
     }
-  });
+});
 
